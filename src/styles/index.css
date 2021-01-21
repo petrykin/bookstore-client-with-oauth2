@@ -1,0 +1,161 @@
+html {
+  line-height: 1.6;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+img {
+  width: auto;
+  height: 250px;
+  display: inline-block;
+}
+
+td > img {
+  margin: 0 auto;
+}
+
+.book-row-content {
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline {
+  display: inline;
+}
+
+nav{
+  padding: 2rem 0;
+  background: #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+nav section {
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  font-weight: 700;
+  color: #cecece;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+}
+
+nav a:first-of-type {
+  margin-left: -1.5rem;
+}
+
+nav a:hover {
+  background: #222;
+  color: #e76767;
+}
+
+a {
+  color: #ea3546;
+  text-decoration: none;
+}
+
+section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
+section.admin-page {
+  max-width: 900px;
+  margin-top: 8rem;
+}
+
+.page {
+  margin-top: 8rem;
+}
+
+section h1 {
+  font-size: 3rem;
+  color: #444;
+}
+
+.post h2 {
+  font-size: 2.5rem;
+}
+
+.post-excerpt {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.post-excerpt:first-of-type {
+  padding-top: 0;
+}
+
+.post-excerpt h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.comment {
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.button {
+  display: block;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #e76c67;
+  padding: 0.75rem 1rem;
+  color: #e76c67;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: #e76767;
+  border: 1px solid #e76767;
+  color: white;
+}
+
+.btn-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+}
+
+.cart-item {
+  width: auto;
+}

@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "email": "user@example.com",
+      "role": "user",
+      "password": "$2a$10$2myKMolZJoH.q.cyXClQXufY1Mc7ETKdSaQQCC6Fgtbe0DCXRBELG",
+      "id": 1
+    },
+    {
+      "email": "admin@example.com",
+      "role": "admin",
+      "password": "$2a$10$w8qB40MdYkMs3dgGGf0Pu.xxVOOzWdZ5/Nrkleo3Gqc88PF/OQhOG",
+      "id": 2
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Patterns of Enterprise Application Architecture",
+      "isbn": "9780321127426",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque. Vel orci porta non pulvinar.",
+      "price": 63.91,
+      "currency": "USD",
+      "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51X+r+OdV3L._SX397_BO1,204,203,200_.jpg",
+      "quantity": 10,
+      "author": "Martin, Fowler",
+      "visible": true
+    },
+    {
+      "id": 2,
+      "title": "Analysis Patterns: Reusable Object Models",
+      "isbn": "9780201895421",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque. Vel orci porta non pulvinar.",
+      "price": 24.55,
+      "currency": "USD",
+      "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51Pp1zgneWL._SX394_BO1,204,203,200_.jpg",
+      "quantity": 10,
+      "author": "Martin, Fowler",
+      "visible": true
+    },
+    {
+      "id": 3,
+      "title": "Spring in Action",
+      "isbn": "9781617294945",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque. Vel orci porta non pulvinar.",
+      "price": 44.99,
+      "currency": "USD",
+      "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/51xkEqwHOxL._SX397_BO1,204,203,200_.jpg",
+      "quantity": 10,
+      "author": "Craig, Walls",
+      "visible": true
+    },
+    {
+      "id": 4,
+      "title": "Effective Java",
+      "isbn": "9780134685991",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque. Vel orci porta non pulvinar.",
+      "price": 54.98,
+      "currency": "USD",
+      "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/41JLgmt8MlL._SX402_BO1,204,203,200_.jpg",
+      "quantity": 10,
+      "author": "Joshua, Bloch",
+      "visible": true
+    },
+    {
+      "id": 5,
+      "title": "Microservices with Spring Boot and Spring Cloud",
+      "isbn": "9781789613476",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque. Vel orci porta non pulvinar.",
+      "price": 63,
+      "currency": "USD",
+      "coverUrl": "https://images-na.ssl-images-amazon.com/images/I/515e7uyNIUL._SX403_BO1,204,203,200_.jpg",
+      "quantity": 10,
+      "author": "Magnus, Larrson",
+      "visible": true
+    }
+  ]
+}
