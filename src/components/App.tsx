@@ -13,6 +13,8 @@ import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { UserContext } from '../context/UserContext';
 import { AdminRoute } from './AdminRoute';
 import { AmplifySignUp } from '@aws-amplify/ui-react/lib-esm/components';
+import { AmplifySignIn } from '@aws-amplify/ui-react/lib-esm/components';
+import { Auth } from 'aws-amplify';
 
 export const App: FC = () => {
   const {
@@ -26,6 +28,12 @@ export const App: FC = () => {
       setUser(authData);
     });
   }, []);
+
+  // @ts-ignore
+  const handleFacebookSignIn = () => Auth.federatedSignIn({provider: 'Facebook'});
+
+  // @ts-ignore
+  const handleGoogleSignIn = () => Auth.federatedSignIn({provider: 'Google'});
 
   return authState === AuthState.SignedIn && user ? (
     <BookProvider>
@@ -41,6 +49,30 @@ export const App: FC = () => {
     </BookProvider>
   ) : (
     <AmplifyAuthenticator>
+      <AmplifySignIn
+        headerText='Sign In'
+        slot='sign-in'
+        formFields={[
+          {
+            type: 'username',
+            label: 'Username',
+            placeholder: 'Enter your username',
+            required: true
+          },
+          {
+            type: 'password',
+            label: 'Password',
+            placeholder: 'Enter your password',
+            required: true
+          }
+        ]}
+      >
+        <div slot='federated-buttons'>
+          <button className='loginBtn loginBtn--facebook' onClick={ handleFacebookSignIn }>Continue with Facebook</button>
+          <button className='loginBtn loginBtn--google' onClick={ handleGoogleSignIn }>Continue with Google</button>
+          <hr style={{ margin: '12px 0 25px 0' }}/>
+        </div>
+      </AmplifySignIn>
       <AmplifySignUp
         slot='sign-up'
         usernameAlias='username'

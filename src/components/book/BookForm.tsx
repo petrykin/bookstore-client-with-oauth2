@@ -73,7 +73,7 @@ export const BookForm: FC<IBookAdminViewProps> = ({ selectedId, setSelectedId, i
     visible.setChecked(selectedBook && selectedBook.visible || false);
   }, [selectedId]);
 
-  const updatedBook = (id: number): IBook => ({
+  const updatedBook = (id: number | undefined ): IBook => ({
       id: id,
       title: title.value,
       isbn: isbn.value,
@@ -87,18 +87,9 @@ export const BookForm: FC<IBookAdminViewProps> = ({ selectedId, setSelectedId, i
   });
 
   const onSubmit = async () => {
-    selectedId ? editBook(updatedBook(selectedId)) : addBook(updatedBook(102));
+    selectedId ? editBook(updatedBook(selectedId)) : addBook(updatedBook(undefined));
     setSelectedId(null);
     setInEdit(false);
-
-    await fetch('http://localhost:3001/books', {
-      'method': 'POST',
-      'headers': {
-        'cookie': 'cmp-session-id=a1b6d42b-828d-402d-9d46-757bd0b81dca',
-        'Content-Type': 'application/json'
-      },
-      'body': JSON.stringify(selectedId ? updatedBook(selectedId) : updatedBook(102))
-    });
   };
 
   return (
@@ -171,7 +162,7 @@ export const BookForm: FC<IBookAdminViewProps> = ({ selectedId, setSelectedId, i
           onChange={visible.onChange}
           readOnly={!inEdit && !!selectedId}
         />
-        <Button type='submit' primary disabled={!inEdit && !!selectedId} onClick={onSubmit}>Submit</Button>
+        <Button type='submit' primary disabled={!inEdit && !!selectedId} onClick={ onSubmit }>Submit</Button>
       </Form>
     </section>
   );

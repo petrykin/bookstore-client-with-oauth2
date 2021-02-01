@@ -29,7 +29,7 @@ export const UserProvider: FC = ({ children }) => {
 
   const signedin = authState === 'signedin';
 
-  const isAdminRole = (role: string) => role === 'bookstore_admin';
+  const isAdminRole = (role: string) => role === 'bookstore-admin';
 
   // @ts-ignore
   const isAdmin = user?.signInUserSession.idToken.payload['cognito:groups'].findIndex(isAdminRole) !== -1;

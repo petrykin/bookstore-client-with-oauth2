@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "add-to-group"
+  ],
+  "parentResource": "bookstoreclientauth23ef2ecc5",
+  "functionName": "bookstoreclientauth23ef2ecc5PostConfirmation",
+  "resourceName": "bookstoreclientauth23ef2ecc5PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/home/spetrykin/.nvm/versions/node/v12.16.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "roleName": "bookstoreclientauth23ef2ecc5PostConfirmation",
+  "skipEdit": true,
+  "GROUP": "bookstore-user",
+  "enableCors": false
+}

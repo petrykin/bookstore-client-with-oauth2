@@ -1,5 +1,5 @@
 import React, { createContext, FC, useEffect, useState } from 'react';
-import { loadData } from '../service/service';
+import { loadData, saveData } from '../service/service';
 import { IBook, IBookContext } from '../type';
 
 export const BookContext = createContext<IBookContext>({
@@ -20,7 +20,7 @@ export const BookProvider: FC = ({ children }) => {
 
   const fetchBooks = async () => {
     setLoading(true);
-    loadData('http://localhost:3001/books')
+    loadData('http://localhost:5000/books')
       .then(books => {
         setBooks(books);
         setLoading(false);
@@ -31,15 +31,21 @@ export const BookProvider: FC = ({ children }) => {
     !books.length && fetchBooks();
   }, []);
 
-  const handleAddBook = (book: IBook) => {
-    setBooks(books.concat(book));
+  const handleAddBook = async (book: IBook) => {
+    saveData('http://localhost:5000/books', JSON.stringify(book), 'POST')
+      .then(rBook => {
+        setBooks(books.concat(rBook));
+      });
   };
 
   const handleEditBook = (book: IBook) => {
-    let items = [...books];
-    let index = items.findIndex(item => item.id !== book.id);
-    items[index] = book;
-    setBooks(items);
+    saveData(`http://localhost:5000/books/${book.id}`, JSON.stringify(book), 'PUT')
+      .then(rBook => {
+        let items = [...books];
+        let index = items.findIndex(item => item.id === rBook.id);
+        items[index] = rBook;
+        setBooks(items);
+      });
   };
 
   return (

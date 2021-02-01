@@ -7,7 +7,7 @@ import { IUserContext } from '../../type';
 export const Navbar: FC = () => {
   const { userState: { user, signedin, isAdmin }, userActions: { logout } } = useContext<IUserContext>(UserContext);
   // @ts-ignore
-  const username = user?.signInUserSession.idToken.payload.name;
+  const username = user?.signInUserSession.idToken.payload.email;
 
   return (
     <nav>

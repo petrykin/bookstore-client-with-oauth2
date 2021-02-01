@@ -73,6 +73,18 @@
       "quantity": 10,
       "author": "Magnus, Larrson",
       "visible": true
+    },
+    {
+      "id": 102,
+      "title": "test",
+      "isbn": "1010101010101",
+      "description": "test_description",
+      "price": 1,
+      "currency": "USD",
+      "coverUrl": "http://example.com",
+      "quantity": 1,
+      "author": "test_author",
+      "visible": true
     }
   ]
 }
