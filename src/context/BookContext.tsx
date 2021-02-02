@@ -20,7 +20,7 @@ export const BookProvider: FC = ({ children }) => {
 
   const fetchBooks = async () => {
     setLoading(true);
-    loadData('http://localhost:5000/books')
+    loadData('http://resourcebookstoreapi-env.eba-emdde8rm.us-east-1.elasticbeanstalk.com/books')
       .then(books => {
         setBooks(books);
         setLoading(false);
@@ -32,14 +32,14 @@ export const BookProvider: FC = ({ children }) => {
   }, []);
 
   const handleAddBook = async (book: IBook) => {
-    saveData('http://localhost:5000/books', JSON.stringify(book), 'POST')
+    saveData('http://resourcebookstoreapi-env.eba-emdde8rm.us-east-1.elasticbeanstalk.com/books', JSON.stringify(book), 'POST')
       .then(rBook => {
         setBooks(books.concat(rBook));
       });
   };
 
   const handleEditBook = (book: IBook) => {
-    saveData(`http://localhost:5000/books/${book.id}`, JSON.stringify(book), 'PUT')
+    saveData(`http://resourcebookstoreapi-env.eba-emdde8rm.us-east-1.elasticbeanstalk.com/books/${book.id}`, JSON.stringify(book), 'PUT')
       .then(rBook => {
         let items = [...books];
         let index = items.findIndex(item => item.id === rBook.id);
